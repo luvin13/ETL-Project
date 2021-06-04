@@ -1,18 +1,17 @@
-DROP TABLE IF EXISTS happy;
+DROP TABLE IF EXISTS multihappy;
 DROP TABLE IF EXISTS happy2021;
 
-CREATE TABLE happy (
-    id INT NOT NULL,
-    premise_name VARCHAR(20) NOT NULL,
-    county_id INT NOT NULL,
-    PRIMARY KEY (id)
+CREATE TABLE multihappy (
+    country_name VARCHAR(30) NOT NULL,
+    year INT NOT NULL,
+    life_ladder DEC NOT NULL,
+    PRIMARY KEY (country_name)
 );
 
 CREATE TABLE happy2021 (
-    id INT NOT NULL,
-    county_name VARCHAR(20) NOT NULL,
-    license_count INT NOT NULL,
-    county_id INT NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (county_id) REFERENCES Premise(id)
+    country_name VARCHAR(30) NOT NULL,
+    regional_indicator VARCHAR(30) NOT NULL,
+    ladder_score DEC NOT NULL,
+    PRIMARY KEY (country_name),
+    FOREIGN KEY (country_name) REFERENCES multihappy(country_name)
 );
