@@ -1,10 +1,9 @@
-DROP TABLE IF EXISTS multihappy;
-DROP TABLE IF EXISTS happy2021;
+DROP TABLE IF EXISTS worldhappy;
 
 CREATE TABLE worldhappy (
-    country_name VARCHAR(30) NOT NULL,   
-    regional_indicator VARCHAR(30) NOT NULL,
+    country_name VARCHAR NOT NULL,   
     year INT NOT NULL,
-    ladder_score DEC NOT NULL,
-    PRIMARY KEY (country_name)
+    ladder_score DECIMAL(10,3) NOT NULL,
+    regional_indicator VARCHAR NOT NULL,
+    PRIMARY KEY (country_name, year)
 );
